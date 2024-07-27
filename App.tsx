@@ -1,8 +1,8 @@
-import { ThemeProvider } from 'styled-components/native';
-import { StatusBar } from 'react-native';
+import { Roboto_400Regular, Roboto_700Bold, useFonts } from '@expo-google-fonts/roboto';
 import { AppProvider, UserProvider } from '@realm/react';
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { ThemeProvider } from 'styled-components/native';
 
 import theme from './src/theme';
 
@@ -10,8 +10,9 @@ import { REALM_APP_ID } from '@env';
 
 import { Routes } from './src/routes';
 
-import { SignIn } from './src/screens/SignIn';
 import { Loading } from './src/components/Loading';
+import { RealmProvider } from './src/libs/realm';
+import { SignIn } from './src/screens/SignIn';
 
 export default function App() {
 
@@ -36,7 +37,9 @@ export default function App() {
             translucent 
           />
           <UserProvider fallback={SignIn}>
+            <RealmProvider>
             <Routes />
+            </RealmProvider>
           </UserProvider>
         </SafeAreaProvider>
       </ThemeProvider>
