@@ -1,0 +1,19 @@
+{
+  "build": {
+    "production": {
+      "android": {
+        "buildType": "app-bundle",
+        "distribution": "store",
+        "applicationArchivePath": "android-release.aab"
+      }
+    },
+    "development": {
+      "android": {
+        "buildType": "apk",
+        "distribution": "internal",
+        
+        "applicationArchivePath": "android-debug.apk"
+      }
+    }
+  }
+}
