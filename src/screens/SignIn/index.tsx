@@ -1,58 +1,68 @@
-import { IOS_CLIENT_ID, WEB_CLIENT_ID } from '@env';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import { Realm, useApp } from '@realm/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
-import backIMG from '../../assets/background.png';
-import { Button } from '../../components/button';
-import { Container, Slogan, Title } from './styles';
+import * as WebBrowser from 'expo-web-browser';
+import * as Google from 'expo-auth-session/providers/google';
+import { Realm, useApp } from '@realm/react';
 
-GoogleSignin.configure({
-  scopes:['email', 'profile'],
-  webClientId:WEB_CLIENT_ID,
-  iosClientId: IOS_CLIENT_ID,
-  
-})
+import { Container, Title, Slogan } from './styles';
+
+import backgroundImg from '../../assets/background.png'
+import { Button } from '../../components/Button';
+
+import { ANDROID_CLIENT_ID, IOS_CLIENT_ID } from '@env';
+
+WebBrowser.maybeCompleteAuthSession();
 
 export function SignIn() {
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [_, response, googleSignIng] = Google.useAuthRequest({
+    androidClientId: ANDROID_CLIENT_ID,
+    iosClientId: IOS_CLIENT_ID,
+    scopes: ['profile', 'email']
+  });
 
-  const [isAuthenticating , setIsAuthenticating] = useState(false)
-  const app = useApp()
+  const app = useApp();
 
-  async function handleGoogleSignin(){
-    try {
-      setIsAuthenticating(true)
+  function handleGoogleSignIn(){
+    setIsAuthenticating(true);
 
-      const {idToken} = await GoogleSignin.signIn()
-      
-      if(idToken){
-        const credentials = Realm.Credentials.jwt(idToken)
-
-        await app.login(credentials)
-      }else{
-        Alert.alert("Entrar", "Você precisa permitir o acesso ao seu Google")
-        setIsAuthenticating(false)
-        return
+    googleSignIng().then(response => {
+      if(response?.type !== 'success') {
+        setIsAuthenticating(false);
       }
-
-    } catch (error) {
-      console.log(error)
-      setIsAuthenticating(false)
-      Alert.alert("Entrar", "Não foi possível conectar-se a sua conta ")
-    }
+    })
   }
 
+  useEffect(() => {
+    if(response?.type === 'success') {
+      if(response.authentication?.idToken) {
+        const credentials = Realm.Credentials.jwt(response.authentication.idToken);
+
+        app.logIn(credentials).catch((error) => {
+          console.log(error);
+          Alert.alert('Entrar', 'Não foi possível conectar-se a sua conta google.')
+          setIsAuthenticating(false);
+        })
+      } else {
+        Alert.alert('Entrar', 'Não foi possível conectar-se a sua conta google.')
+        setIsAuthenticating(false);
+      }
+    }
+  },[response])
+
   return (
-    <Container source={backIMG}>
-      <Title>Ignite Fleet </Title>
+    <Container source={backgroundImg}>
+      <Title>Ignite Fleet</Title>
 
       <Slogan>
-        Gestão de veículos
+        Gestão de uso de veículos
       </Slogan>
 
-      <Button title="Entrar com o google" isLoading={isAuthenticating} onPress={handleGoogleSignin}/>
+      <Button 
+        title='Entrar com Google' 
+        onPress={handleGoogleSignIn} 
+        isLoading={isAuthenticating} 
+      />
     </Container>
   );
 }
-
-

@@ -5,8 +5,10 @@ export const Container = styled.TouchableOpacity`
   min-height: 56px;
   max-height: 56px;
   border-radius: 6px;
+
   align-items: center;
   justify-content: center;
+
   background-color: ${({ theme }) => theme.COLORS.BRAND_MID}
 `;
 
