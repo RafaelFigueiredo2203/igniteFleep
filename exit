@@ -1,0 +1,634 @@
+[33mcommit 95c91198b5bccdd301683308af583e1ba419fb57[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Jul 11 11:24:49 2023 -0300
+
+    Finalizando o App - Abrindo configurações pelo Alert
+
+[33mcommit b1ab10002fb941f6801e8d87aa98ed79f24ae3b1[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Jul 11 11:19:08 2023 -0300
+
+    Finalizando o App - Abrindo configurações pelo Botão
+
+[33mcommit 95b6302542fdb1688ab27f971f682588dfad51a5[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 17:12:49 2023 -0300
+
+    Finalizando o App - Aplicando load na tela de chegada
+
+[33mcommit c998412c8027cf6665e336e04163feb7acd5391e[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 17:05:11 2023 -0300
+
+    Finalizando o App - Exibindo endereço da saída e chegada
+
+[33mcommit 23823e876f26f7db0ee3134cd26efa8c12bbc890[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 16:51:07 2023 -0300
+
+    Finalizando o App - Criando o componente Locations
+
+[33mcommit 560782d950f7d6b309102b06a06c17f97ef12e96[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 16:40:45 2023 -0300
+
+    Finalizando o App - Obtendo as coordenadas do banco
+
+[33mcommit 1c0b3a64df3bdb6e48fd11d17cf4f330f22b4aa3[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 16:36:19 2023 -0300
+
+    Finalizando o App - Registrada a chegada
+
+[33mcommit 5b46bbeb408d7ee75008a4e95cbc5dd26fa412b2[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 16:31:00 2023 -0300
+
+    Finalizando o App - Registrando a saída
+
+[33mcommit 563adc716cf847ff4a737a76bd78062ea9c36421[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 16:19:50 2023 -0300
+
+    Finalizando o App - Criando o Schema de Coordenadas
+
+[33mcommit 8d2f21035511eea8a2bb64993faebc8a5b83cc25[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:58:38 2023 -0300
+
+    Finalizando o App - Testando a localização em background
+
+[33mcommit a4b022c6650906abe8b126466373a0e8b6c502a2[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:43:50 2023 -0300
+
+    Finalizando o App - Limpeza do AsyncStorage
+
+[33mcommit 1e38a1e39e99663b747ab8796531094efa362887[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:41:00 2023 -0300
+
+    Finalizando o App - Exibindo o mapa na tela de chegada
+
+[33mcommit 562f2da0c35c876c39d3c8f664e470e6fd4993aa[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:36:26 2023 -0300
+
+    Finalizando o App - Criar o getLocationsInfo
+
+[33mcommit 5fd1b59550beffb720cd5e28b44f7a0203183916[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:27:05 2023 -0300
+
+    Background Task - Utilizando o saveStorageLocation
+
+[33mcommit b3c387c0497b364723f4a14b9b0a496fd1623318[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:24:57 2023 -0300
+
+    Background Task - Removendo as coordenadas no storage
+
+[33mcommit fc59238454808db0be12809c8968ba8a37327e36[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:20:14 2023 -0300
+
+    Background Task - Salvando as coordenadas no storage
+
+[33mcommit ba1a1cd1ed969856163dad9fdd8ca6a009b718a9[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:16:33 2023 -0300
+
+    Background Task - Obtendo as coordenadas no storage
+
+[33mcommit 725c2d240a2b01d734ee983f82a8ac13c82ecd33[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:13:25 2023 -0300
+
+    Background Task - Parando a tarefa
+
+[33mcommit 7de95a1a094e9986061cbabf36d636eedac7c3aa[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 15:11:13 2023 -0300
+
+    Background Task - Iniciando a tarefa
+
+[33mcommit e87170e73d2433e2129e5bf7cbb299015316d9c0[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 12:18:10 2023 -0300
+
+    Background Task - Criando a função para parar a task
+
+[33mcommit 6c32eb0a8276dfd3f424362577e916aaedcc0939[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 12:14:12 2023 -0300
+
+    Background Task - Criando a função para iniciar a task
+
+[33mcommit c796455dfa69aa5adfce2a4b9304a82453aa5d2a[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 12:10:43 2023 -0300
+
+    Background Task - Definindo a Task em Background
+
+[33mcommit 005ec556ab22f870b0ab75fa1df1197da2b30262[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 12:01:06 2023 -0300
+
+    Background Task - Instalando o expo-task-manager
+
+[33mcommit f4d57139bf14fbf4bbacb4eb0ceabe6e779ec623[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 11:35:23 2023 -0300
+
+    Background Task - Obtendo a permissão para obter a localização em background
+
+[33mcommit 52e17ad2db16bfbb20300e43c30420ffc3e8c184[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 11:24:12 2023 -0300
+
+    Background Task - Configurando as permissões
+
+[33mcommit b7cbc1579038a505639c634423f604d67e76ead6[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Mon Jul 10 11:15:42 2023 -0300
+
+    Background Task - Validação das coordenadas
+
+[33mcommit 39a1c08dd8570959bf086d4e7e709822d84c45d9[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 18:26:17 2023 -0300
+
+    Mapa - Finalizando o Mapa
+
+[33mcommit 78427ddbe9338d36c9c8c07b406b1dbe1aa266b1[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 18:24:59 2023 -0300
+
+    Mapa - Desenhando a linha no mapa
+
+[33mcommit 877fe388bea12a6fab04f8c76d695ca140889f78[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 18:19:16 2023 -0300
+
+    Mapa - Ajustando o mapa para exibir marcadores
+
+[33mcommit 8e219f178dbfa54798c1c26b155bc0b154ddf081[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 18:10:36 2023 -0300
+
+    Mapa - Exibindo mais de um marcador
+
+[33mcommit c2d013d84416092f273630dfe727304cfa06f4ef[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 18:02:09 2023 -0300
+
+    Mapa - Customizando o marcador
+
+[33mcommit ea299cd8fcf62bb11e785f603c54053523f009bb[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 17:59:35 2023 -0300
+
+    Mapa - Exibindo marcador no mapa
+
+[33mcommit 84e1cd322881958ebcfa09cbdbee9363a67b1f77[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 17:56:56 2023 -0300
+
+    Mapa - Exibindo o mapa
+
+[33mcommit bdd142859e763fd2b983948b292258865a37ebc6[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 17:45:08 2023 -0300
+
+    Mapa - Utilizando a API Key
+
+[33mcommit c7d023a3ed9b3a9ab4ebe8a4a60cceec552f76c9[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 17:24:10 2023 -0300
+
+    Mapa - Instalando o react-native-maps
+
+[33mcommit d51c47408df5fb338571479e40636cbef8bf32f6[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 16:22:40 2023 -0300
+
+    Geolocalização - Criando o componente IconBox
+
+[33mcommit b59dcaf36350e694e33cd0c5a6c03cccd55ad672[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 16:10:38 2023 -0300
+
+    Geolocalização - Criando o componente LocationInfo
+
+[33mcommit caa6e4704ba77b98b7a5dc971b0dae262936704d[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 16:00:07 2023 -0300
+
+    Geolocalização - Loading da localização
+
+[33mcommit c5dc33cef2e5e26d1396fe2c56142e6767c755ce[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 15:56:02 2023 -0300
+
+    Geolocalização - Obtendo o endereço com geocodificação
+
+[33mcommit 630a623cd4caabf7a37c7e6031df613c898a25c5[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 15:44:12 2023 -0300
+
+    Geolocalização - Obtendo as coordenadas da localização atual
+
+[33mcommit 13d3ea32db178ca52edf059501873f81d347ac56[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 15:36:44 2023 -0300
+
+    Geolocalização - Obtendo permissão
+
+[33mcommit f87128e9cb7be6a9814bcc48fb07a9abace6f8e1[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed Jun 28 15:21:44 2023 -0300
+
+    Geolocalização - Instalando o Expo Location
+
+[33mcommit 3f12a3db28dbabd5c3740d2ae9b56ad6afba7083[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 16:56:19 2023 -0300
+
+    Banco de Dados remoto - Exibindo mensagem de sincronização pendente em Arrival
+
+[33mcommit 6dda662973df0cdfa637971eb7780723f6abbb41[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 16:41:57 2023 -0300
+
+    Banco de Dados remoto - Exibindo porcentagem
+
+[33mcommit fc6de996e202d669ec227d095592c990a907f8f9[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 16:15:02 2023 -0300
+
+    Banco de Dados remoto - React Native Toast Message
+
+[33mcommit b27810f6e1ec76d8394a9c24158617e93cb65520[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 16:00:12 2023 -0300
+
+    Banco de Dados remoto - Atualizando o ícone do status
+
+[33mcommit fb059e3dd17d2c2c1e2cf5143a2fd2394414f1b7[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 15:52:37 2023 -0300
+
+    Banco de Dados remoto - Armazenando a data e a hora da última sincronização
+
+[33mcommit 9c2b1bcc16cbde7c4dd0c83bcec4d3c91752cf5e[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 15:43:31 2023 -0300
+
+    Banco de Dados remoto - Progress Notification
+
+[33mcommit 6abe94f288b2e157d902ccb0c5109e8f91ad9486[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 15:33:08 2023 -0300
+
+    Banco de Dados remoto - NetInfo
+
+[33mcommit 878571846a2efcf31b77ce54aa511b695a64c140[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 15:26:57 2023 -0300
+
+    Banco de Dados remoto - Componente TopMessage
+
+[33mcommit 0cf08783ee99d91e2e9272a14a2b2ed3fd088e6c[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 24 15:09:24 2023 -0300
+
+    Banco de Dados remoto - Habilitando a sincronização no App
+
+[33mcommit 323f5d5541541be18a33290af45a695a2a6e269a[m
+Merge: f1a4368 8a7776c
+Author: Rennan Douglas <rplaykl@gmail.com>
+Date:   Fri May 12 12:03:20 2023 -0300
+
+    Merge pull request #1 from rocketseat-education/parte-2
+    
+    Parte 2
+
+[33mcommit 8a7776c7885646e0f21e6e60923a64c638efc44d[m[33m ([m[1;31morigin/parte-2[m[33m)[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 15:54:28 2023 -0300
+
+    Banco de Dados local - Testando e ajustando o app
+
+[33mcommit e98c35892a9d1456cbc320cc86f4adf1cbe1da3a[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 15:39:46 2023 -0300
+
+    Banco de Dados local - react-native-keyboard-aware-scroll-view
+
+[33mcommit 1142a3819bfa00700d8189a3fbfb4f4a8ca80c09[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 15:34:21 2023 -0300
+
+    Banco de Dados local - Exibindo detalhes do veículo em uso
+
+[33mcommit ee5b8b46213265cb3d8ed68b8385c47cd9283d0c[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 15:28:22 2023 -0300
+
+    Banco de Dados local - Exibindo o histórico
+
+[33mcommit 48351be4a335e6bd84eff60e6be6ec8013fe4a59[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 15:14:09 2023 -0300
+
+    Banco de Dados local - Dayjs
+
+[33mcommit 5d56d2a1b8cf5d54227b7ba3e5f637fe6595fe0c[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 15:09:54 2023 -0300
+
+    Banco de Dados local - Criando Historic Card
+
+[33mcommit 6a3f4fd9f3883bb8ffd043f972240171cb163211[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 14:54:34 2023 -0300
+
+    Banco de Dados local - Listando histórico de veículos utilizados
+
+[33mcommit 01bcc88291551af1e15abae6b978cf52df3fb110[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 14:50:01 2023 -0300
+
+    Banco de Dados local - Registrando a chegada
+
+[33mcommit 03b8ae735eca239d9056cf3580a3c610ebd46af6[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 14:35:41 2023 -0300
+
+    Banco de Dados local - Observando mudanças no banco
+
+[33mcommit fa63e67f814543882ac90eb6b2470e86c2b4a894[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 14:19:24 2023 -0300
+
+    Banco de Dados local - Cancelar veículo em uso
+
+[33mcommit d26edf6c40e47e73f6b3b68817ed99876e5b4284[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 12:17:31 2023 -0300
+
+    Banco de Dados local - Carregando os detalhes do veículo
+
+[33mcommit 6bf96f5a8d2a18bb70910e034d4b93cfc7b52983[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 12:05:22 2023 -0300
+
+    Banco de Dados local - Criando Button Icon
+
+[33mcommit a02b497cfdfab319fd59790d5c36e7ae4dba276e[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Thu May 11 11:52:12 2023 -0300
+
+    Banco de Dados local - Criando a tela de registrar chegada
+
+[33mcommit a538ad04d5755088b22362b67482fbb4b9fca042[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 17:41:07 2023 -0300
+
+    Banco de Dados local - Criando a rota de registrar a chegada
+
+[33mcommit 4dfaa5f5b869700824fa32fefc68e9396dcc7665[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 17:36:53 2023 -0300
+
+    Banco de Dados local - Fluxo da tela de registar chegada
+
+[33mcommit a921840d8e9de055d926260ed28c6bea7b009f6a[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 17:33:24 2023 -0300
+
+    Banco de Dados local - Filtrando veículo em uso
+
+[33mcommit e083dc4cd8e80cb03f2aaac493656c8367c6620c[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 17:19:36 2023 -0300
+
+    Banco de Dados local - Exibindo dados do banco
+
+[33mcommit d3b360f426e1ab2a54d6913fac588fc0cd54b6a8[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 16:57:11 2023 -0300
+
+    Banco de Dados local - Cadastrando saída do veículo
+
+[33mcommit 24ef51a1df6bc3f3d3f31904e5a54b2e8288bb63[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 15:02:28 2023 -0300
+
+    Banco de Dados local - Validação da descrição
+
+[33mcommit 9119508fe2bafb0fa651dfed4b2a8d638d936b84[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 14:58:16 2023 -0300
+
+    Banco de Dados local - Validação da placa
+
+[33mcommit 4ecb7b8b7efe237706dab8b18847f3c01f8f2117[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 14:36:39 2023 -0300
+
+    Interface de cadastro - ScrollView e KeyboardAvoidingView
+
+[33mcommit 0fbc596c799c2fcbbe7d81e6dde1eb416f61b607[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 14:19:39 2023 -0300
+
+    Interface de cadastro - Input Refs
+
+[33mcommit d67d7072152ce95bab3bf6a16cb7f9052b10fc81[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 14:01:16 2023 -0300
+
+    Interface de cadastro - Componente Button
+
+[33mcommit ffd5c4179d25465b1bd5f46f3d2e8ae5fe68a972[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 13:56:59 2023 -0300
+
+    Interface de cadastro - Criando o TextAreaInput
+
+[33mcommit 4d1c64ff9bb447fba024600a4368c199739deef1[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Wed May 10 13:47:33 2023 -0300
+
+    Interface de cadastro - Criando input para placa do veículo
+
+[33mcommit 5ab3d0c49e8de63055d2f2d1b2d113338245de03[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue May 9 17:05:50 2023 -0300
+
+    Interface de cadastro - Criando o Header
+
+[33mcommit 9e276344004a962fe155807f17cbdc7b8cdd7da2[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue May 9 16:02:30 2023 -0300
+
+    Interface de cadastro - Navegando para tela de cadastro
+
+[33mcommit 7321231cd42d4c006026fc8b4681104c080bd4ce[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue May 9 15:51:44 2023 -0300
+
+    Interface de cadastro - Criando o component car status
+
+[33mcommit 22031cd5a86a17bdcb8d40a7f2d08653af029f10[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue May 9 12:11:37 2023 -0300
+
+    Implementando o RealmDB - Criando o realm provider
+
+[33mcommit 47702fd0196b4b489890ae7927902ce29a74c56b[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue May 9 12:04:16 2023 -0300
+
+    Implementando o RealmDB - Método generate
+
+[33mcommit f0118c8ee2f7125ebf9e4173ebf7754c20169b03[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue May 9 11:57:04 2023 -0300
+
+    Implementando o RealmDB - Criando o scheme de histórico
+
+[33mcommit f1a4368ba0fd3d6c52fc5c72b99adde561ac015e[m
+Author: Dalton Menezes <daltonmenezes@outlook.com>
+Date:   Fri May 5 18:13:15 2023 -0300
+
+    chore(docs): update README.md
+
+[33mcommit a9a7210a2c9ec088e03388daf596f04a25fd4222[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:54:16 2023 -0300
+
+    Navegação & Safe Area Context - useSafeAreaInsets
+
+[33mcommit 47e5b0bd90bb8d5056a4f933ab9fad681ae29aca[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:49:07 2023 -0300
+
+    Navegação & Safe Area Context - Tipagem das rotas
+
+[33mcommit cc459b01a17dce50135db6ebaf270cbac134dceb[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:46:30 2023 -0300
+
+    Navegação & Safe Area Context - Instalando o React Navigation
+
+[33mcommit 99154d190a860f2fd65ba603d071b201c487720a[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:33:58 2023 -0300
+
+    Cloud Mongodb Atlas - Logout
+
+[33mcommit 22cc33b352973d6b408312ec0e9ae93165087837[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:32:25 2023 -0300
+
+    Cloud Mongodb Atlas - Carregando dados do usuário
+
+[33mcommit 39fadad4212f19b8a7b53ce75a9a58ee8db687bc[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:29:59 2023 -0300
+
+    Cloud Mongodb Atlas - Imagem do usuário
+
+[33mcommit e615cd1dc220a8f31e22749767b6893ad623dc9a[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:17:32 2023 -0300
+
+    Cloud Mongodb Atlas - Ícones
+
+[33mcommit 895a1bf94804463501820e1584355198b5a0087a[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 17:06:56 2023 -0300
+
+    Cloud Mongodb Atlas - Criando o Header
+
+[33mcommit e4554197ce7e6102098c666d5f8adc1e418926bc[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 16:58:15 2023 -0300
+
+    Cloud Mongodb Atlas - Logando o usuário
+
+[33mcommit 553e477fbc8575795c270af573e421b137809f86[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 25 16:50:49 2023 -0300
+
+    Cloud Mongodb Atlas - Instalando o RealmDB no projeto
+
+[33mcommit a733a7767532c27e0e7ebc123308709f62c2809b[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 18:31:56 2023 -0300
+
+    Login Social - Obtendo dados do perfil
+
+[33mcommit c835a90a5e7c826ce48dad5d2499c40760a038d0[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 18:23:52 2023 -0300
+
+    Login Social - Obtendo o token do usuário
+
+[33mcommit 3696bd90e4e1a843ea879949b7b9fbbf272b086d[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 18:05:17 2023 -0300
+
+    Login Social - Obtendo ID Android e iOS no GCP
+
+[33mcommit 9deb1739c221076df5cd144d572e37e5b25f7e4f[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 17:33:14 2023 -0300
+
+    Login Social - Variáveis de ambiente
+
+[33mcommit a9fd697bf294077cb549812f0736fecbb0e509fa[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 16:24:05 2023 -0300
+
+    Estruruta do projeto - Componente Button
+
+[33mcommit 2f58f5f55078fdabe685ccdcf66e2d5e0f25ea80[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 16:01:34 2023 -0300
+
+    Estruruta do projeto - Estilizando a interface de Login
+
+[33mcommit 9b5b7f4ac5b8e1d09d5e1d57c8a0496772e523a1[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 15:54:07 2023 -0300
+
+    Estruruta do projeto - Fontes personalizadas + Componente de Loading
+
+[33mcommit d5cc3cf2e5b31b4cfe6e572368e5b587dc62794c[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 15:16:41 2023 -0300
+
+    Estruruta do projeto - Adicionando o Styled Components
+
+[33mcommit 2c7ae48577c13690d2e94fd7762f32fefec075e1[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 14:53:04 2023 -0300
+
+    Estruruta do projeto - Assets e Splash
+
+[33mcommit 45e30c87d7a3496916d4631fa13a1644ad7f7746[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 14:46:29 2023 -0300
+
+    Estruruta do projeto - Criando projeto
+
+[33mcommit e16d1764f8d7aeda08cfeafca68f7aaee2fecff0[m
+Author: RennanD <rplaykl@gmail.com>
+Date:   Tue Apr 18 14:39:40 2023 -0300
+
+    Initial commit
+    
+    Generated by create-expo-app 1.1.3.
