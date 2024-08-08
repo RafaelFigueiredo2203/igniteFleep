@@ -13,10 +13,14 @@ import { REALM_APP_ID } from '@env';
 import { RealmProvider, SyncConfig } from './src/libs/realm';
 import { Routes } from './src/routes';
 
+import { useNetInfo } from '@react-native-community/netinfo';
+import { WifiSlash } from 'phosphor-react-native';
 import { Loading } from './src/components/Loading';
+import { TopMessage } from './src/components/TopMessage';
 import { SignIn } from './src/screens/SignIn';
 
 export default function App() {
+  const netInfo = useNetInfo()
 
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
@@ -31,8 +35,15 @@ export default function App() {
 
   return (
     <AppProvider id={REALM_APP_ID}>
-      <ThemeProvider theme={theme}>
-        <SafeAreaProvider style={{ backgroundColor: theme.COLORS.GRAY_800 }}>
+      <ThemeProvider theme={theme}> 
+      <SafeAreaProvider style={{ backgroundColor: theme.COLORS.GRAY_800 }}>
+       {
+        !netInfo.isConnected && 
+        <TopMessage
+        title='Você esta offline'
+        icon={WifiSlash}
+        />
+       }
           <StatusBar 
             barStyle="light-content" 
             backgroundColor="transparent" 
