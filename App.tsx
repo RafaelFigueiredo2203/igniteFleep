@@ -4,6 +4,7 @@ import { StatusBar } from 'react-native';
 import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
+import './src/libs/dayjs';
 
 import theme from './src/theme';
 
