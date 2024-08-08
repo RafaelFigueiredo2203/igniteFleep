@@ -9,6 +9,7 @@ import { Alert, FlatList } from 'react-native';
 import { CarStatus } from '../../components/CarStatus';
 import { HistoricCard, HistoricCardProps } from '../../components/HistoricCard';
 import { HomeHeader } from '../../components/HomeHeader';
+import { saveLastSyncTimestamp } from '../../libs/asyncStorage/syncStorage';
 import { useQuery, useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
 import { Container, Content, Label, Title } from './styles';
@@ -68,8 +69,14 @@ export function Home() {
     navigate('arrival', {id})
   }
 
-  function progressNotification(transferred:number , transferable: number){
+  async function progressNotification(transferred:number , transferable: number){
     const percentage = (transferred / transferable) * 100
+
+    if(percentage === 100){
+      await saveLastSyncTimestamp();
+      fetchHistoric();
+    }
+    
 
     
   }
