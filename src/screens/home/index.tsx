@@ -68,8 +68,10 @@ export function Home() {
     navigate('arrival', {id})
   }
 
-  function progressNotification(tranferred:number , transferable: number){
+  function progressNotification(transferred:number , transferable: number){
+    const percentage = (transferred / transferable) * 100
 
+    
   }
 
   useEffect(() => {
