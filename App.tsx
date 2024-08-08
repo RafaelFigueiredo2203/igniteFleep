@@ -4,12 +4,13 @@ import { StatusBar } from 'react-native';
 import 'react-native-get-random-values';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components/native';
+import './src/libs/dayjs';
 
 import theme from './src/theme';
 
 import { REALM_APP_ID } from '@env';
 
-import { RealmProvider } from './src/libs/realm';
+import { RealmProvider, SyncConfig } from './src/libs/realm';
 import { Routes } from './src/routes';
 
 import { Loading } from './src/components/Loading';
@@ -38,7 +39,7 @@ export default function App() {
             translucent 
           />
           <UserProvider fallback={SignIn}>
-            <RealmProvider>
+            <RealmProvider sync={SyncConfig} fallback={Loading}>
               <Routes />
             </RealmProvider>
           </UserProvider>
