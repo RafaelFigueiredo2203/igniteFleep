@@ -6,10 +6,11 @@ import { useUser } from '@realm/react';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 import { Alert, FlatList } from 'react-native';
+import Toast from 'react-native-toast-message';
 import { CarStatus } from '../../components/CarStatus';
 import { HistoricCard, HistoricCardProps } from '../../components/HistoricCard';
 import { HomeHeader } from '../../components/HomeHeader';
-import { saveLastSyncTimestamp } from '../../libs/asyncStorage/syncStorage';
+import { getLastAsyncTimestamp, saveLastSyncTimestamp } from '../../libs/asyncStorage/syncStorage';
 import { useQuery, useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
 import { Container, Content, Label, Title } from './styles';
@@ -43,16 +44,18 @@ export function Home() {
 
   }
 
-  function fetchHistoric() {
+  async function fetchHistoric() {
     try {
       const response = historic.filtered("status = 'arrival' SORT(created_at DESC")
+
+      const lastSync = await getLastAsyncTimestamp()
 
     const formattedHistoric = response.map((item) => {
       return ({
         id: item._id.toString(),
         created: dayjs(item.created_at).format('[Saída em] DD/MM/YYYY [às] HH:mm'),
         licensePlate: item.license_plate,
-        isSync: false
+        isSync: lastSync > item.updated_at!.getTime(),
       })
     })
 
@@ -75,9 +78,14 @@ export function Home() {
     if(percentage === 100){
       await saveLastSyncTimestamp();
       fetchHistoric();
+
+      Toast.show({
+        text1: 'Sincronização concluída',
+        type:'info',
+      })
     }
     
-
+    
     
   }
 
