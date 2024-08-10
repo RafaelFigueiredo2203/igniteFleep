@@ -1,5 +1,6 @@
 import { Accuracy, hasStartedLocationUpdatesAsync, startLocationUpdatesAsync, stopLocationUpdatesAsync } from 'expo-location';
 import * as TaskManager from 'expo-task-manager';
+import { saveStorageLocation } from '../libs/asyncStorage/locationStorage';
 
 export const BACKGORUND_TASK_NAME = 'location-tracking'
 
@@ -9,6 +10,8 @@ TaskManager.defineTask(BACKGORUND_TASK_NAME, async ({ data, error }: any) => {
       new error;
     }
 
+    if(data){
+
   const {coords, timestamp}  = data.locations[0];
   
   const currentLocation = {
@@ -17,10 +20,11 @@ TaskManager.defineTask(BACKGORUND_TASK_NAME, async ({ data, error }: any) => {
     timestamp,
   }
 
-  console.log(currentLocation)
-
+  await saveStorageLocation(currentLocation)
+    }
   } catch (error ) {
       console.log(error)
+      stopLocationTask();
   }
 })
 

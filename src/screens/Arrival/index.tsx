@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { X } from 'phosphor-react-native';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
 import { BSON } from 'realm';
 import { Button } from '../../components/Button';
@@ -9,6 +9,7 @@ import { Header } from '../../components/Header';
 import { getLastAsyncTimestamp } from '../../libs/asyncStorage/syncStorage';
 import { useObject, useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
+import { stopLocationTask } from '../../tasks/backgroundTaskLocation';
 import { AsyncMessage, Container, Content, Description, Footer, Label, LicensePlate } from './styles';
 
 type RouteParamsProps = {
@@ -44,11 +45,13 @@ export function Arrival() {
     goBack()
   }
 
-  function handleArrivalRegister(){
+ async function handleArrivalRegister(){
    try {
     if(!historic){
       return Alert.alert('Erro', 'Não foi possível obter os dados para registrar a chegada do veículo')
     }
+
+    await stopLocationTask();
     
     realm .write(() => {
       historic.status = 'arrival',
