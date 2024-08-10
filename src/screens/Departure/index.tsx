@@ -16,6 +16,7 @@ import { LocationInfo } from '../../components/LocationInfo';
 import { Map } from '../../components/Map';
 import { useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
+import { startLocationTask } from '../../tasks/backgroundTaskLocation';
 import { getAddressLocation } from '../../utils/getAddressLocation';
 import { licensePlateValidate } from '../../utils/licensePlateValidate';
 import { Container, Content, Message } from './styles';
@@ -65,6 +66,8 @@ export function Departure() {
         setIsRegistering(false)
         return Alert.alert('Permissão de localização', 'É necessário permitir o uso da localização para registrar a saída do veículo.')
       }
+
+      await startLocationTask();
 
       realm.write(() => {
         realm.create('Historic', Historic.generate({
