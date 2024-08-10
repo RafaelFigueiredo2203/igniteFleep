@@ -51,6 +51,12 @@ export function Departure() {
         descriptionRef.current?.focus();
         return  Alert.alert('Finalidade', 'Por favor , informe a finalidade da utilização do veículo!');
       }
+
+      if(!currentCoord?.latitude && ! currentCoord?.longitude){
+        return  Alert.alert('Localização', 'Não foi possível recuperar a localização. Verifique se o GPS está ativado.');
+        
+      }
+
       setIsRegistering(true)
 
       realm.write(() => {
