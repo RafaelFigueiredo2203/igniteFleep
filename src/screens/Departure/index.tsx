@@ -7,7 +7,7 @@ import { TextAreaInput } from '../../components/TextAreaInput';
 
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '@realm/react';
-import { LocationAccuracy, LocationObjectCoords, LocationSubscription, useForegroundPermissions, watchPositionAsync } from 'expo-location';
+import { LocationAccuracy, LocationObjectCoords, LocationSubscription, requestBackgroundPermissionsAsync, useForegroundPermissions, watchPositionAsync } from 'expo-location';
 import { Car } from 'phosphor-react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button } from '../../components/Button';
@@ -40,7 +40,7 @@ export function Departure() {
   const user = useUser()
   const {goBack} = useNavigation()
 
-  function handleDepartureRegister() {
+  async function handleDepartureRegister() {
     try{
       if(!licensePlateValidate(licensePlate)) {
         licensePlateRef.current?.focus();
@@ -58,6 +58,13 @@ export function Departure() {
       }
 
       setIsRegistering(true)
+
+      const backgroundPermissions = await requestBackgroundPermissionsAsync();
+
+      if(!backgroundPermissions.granted){
+        setIsRegistering(false)
+        return Alert.alert('Permissão de localização', 'É necessário permitir o uso da localização para registrar a saída do veículo.')
+      }
 
       realm.write(() => {
         realm.create('Historic', Historic.generate({
