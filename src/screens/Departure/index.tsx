@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Alert, ScrollView, TextInput } from 'react-native';
 
 import { Header } from '../../components/Header';
@@ -7,12 +7,13 @@ import { TextAreaInput } from '../../components/TextAreaInput';
 
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '@realm/react';
+import { useForegroundPermissions } from 'expo-location';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button } from '../../components/Button';
 import { useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
 import { licensePlateValidate } from '../../utils/licensePlateValidate';
-import { Container, Content } from './styles';
+import { Container, Content, Message } from './styles';
 
 
 
@@ -21,6 +22,8 @@ export function Departure() {
   const [description, setDescription] = useState('');
   const [licensePlate, setLicensePlate] = useState('');
   const [isRegistering, setIsRegistering] = useState(false)
+
+  const [locationForegroundPermission, requestLocationForegroundPermission] = useForegroundPermissions()
 
   const descriptionRef = useRef<TextInput>(null);
   const licensePlateRef = useRef<TextInput>(null);
@@ -61,6 +64,18 @@ export function Departure() {
     }
   }
 
+  useEffect(() => {
+    requestLocationForegroundPermission();
+  },[])
+
+  if(!locationForegroundPermission?.granted){
+    return(
+      <Container>
+        <Header title="Saída"/>
+        <Message>A permissão para acessar a localização é necessária para registrar a saída.</Message>
+      </Container>
+    )
+  }
 
   return (
     <Container>
@@ -85,7 +100,7 @@ export function Departure() {
 
             <TextAreaInput
               ref={descriptionRef}
-              label='Finalizade'
+              label='Finalidade'
               placeholder='Vou utilizar o veículo para...'
               onSubmitEditing={handleDepartureRegister}
               returnKeyType='send'
