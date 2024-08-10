@@ -1,11 +1,14 @@
+import { Car } from 'phosphor-react-native';
 import React from 'react';
-import MapView, { LatLng, MapViewProps, PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { LatLng, MapViewProps, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
+import { IconBox } from '../IconBox';
 
 type Props = MapViewProps & {
   coordinates:LatLng[];
 }
 
 export function Map({coordinates, ...rest}: Props) {
+
   const lastCoordinate = coordinates[coordinates.length - 1]
 
   return (
@@ -19,6 +22,14 @@ export function Map({coordinates, ...rest}: Props) {
       longitudeDelta: 0.0421,
     }}
     {...rest}
-    />
+    >
+      <Marker
+      coordinate={coordinates[0]}
+      >
+        <IconBox
+        size="SMALL" icon={Car}
+        />
+      </Marker>
+    </MapView>
   )
 }
