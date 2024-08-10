@@ -12,6 +12,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { Button } from '../../components/Button';
 import { useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
+import { getAddressLocation } from '../../utils/getAddressLocation';
 import { licensePlateValidate } from '../../utils/licensePlateValidate';
 import { Container, Content, Message } from './styles';
 
@@ -75,11 +76,15 @@ export function Departure() {
     }
 
     let subscription : LocationSubscription;
+    
     watchPositionAsync({
       accuracy: LocationAccuracy.High,
       timeInterval: 1000,
     }, (location) => {
-      console.log(location)
+     getAddressLocation(location.coords)
+     .then((address) => {
+      console.log(address)
+     })
     }).then((response) => subscription = response);
 
     return () => subscription.remove();
