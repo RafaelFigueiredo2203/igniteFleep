@@ -8,6 +8,7 @@ import { TextAreaInput } from '../../components/TextAreaInput';
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '@realm/react';
 import { LocationAccuracy, LocationSubscription, useForegroundPermissions, watchPositionAsync } from 'expo-location';
+import { Car } from 'phosphor-react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button } from '../../components/Button';
 import { Loading } from '../../components/Loading';
@@ -126,6 +127,7 @@ export function Departure() {
             {
               currentAddress && (
                 <LocationInfo
+                icon={Car}
                 label='Localização atual'
                 description={currentAddress}
                 />

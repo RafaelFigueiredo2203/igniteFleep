@@ -1,4 +1,5 @@
 import React from 'react';
+import { IconBox, IconBoxProps } from '../IconBox';
 import { Container, Description, Info, Label } from './styles';
 
 export type LocationInfoProps ={
@@ -6,9 +7,16 @@ export type LocationInfoProps ={
   description:string;
 }
 
-export function LocationInfo({label,description}: LocationInfoProps) {
+type Props = LocationInfoProps & {
+  icon: IconBoxProps
+};
+
+export function LocationInfo({label,icon, description}: Props) {
   return (
     <Container>
+      <IconBox 
+      icon={icon}
+      />
 
       <Info>
         <Label numberOfLines={1}>
