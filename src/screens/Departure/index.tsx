@@ -7,12 +7,13 @@ import { TextAreaInput } from '../../components/TextAreaInput';
 
 import { useNavigation } from '@react-navigation/native';
 import { useUser } from '@realm/react';
-import { LocationAccuracy, LocationSubscription, useForegroundPermissions, watchPositionAsync } from 'expo-location';
+import { LocationAccuracy, LocationObjectCoords, LocationSubscription, useForegroundPermissions, watchPositionAsync } from 'expo-location';
 import { Car } from 'phosphor-react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Button } from '../../components/Button';
 import { Loading } from '../../components/Loading';
 import { LocationInfo } from '../../components/LocationInfo';
+import { Map } from '../../components/Map';
 import { useRealm } from '../../libs/realm';
 import { Historic } from '../../libs/realm/schemas/Historic';
 import { getAddressLocation } from '../../utils/getAddressLocation';
@@ -28,6 +29,7 @@ export function Departure() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [isLoadingLocation, setIsLoadingLocation] = useState(true)
   const [currentAddress, setCurrentAddress] = useState<string | null>()
+  const [currentCoord, setCurrentCoord] = useState<LocationObjectCoords | null>(null)
 
   const [locationForegroundPermission, requestLocationForegroundPermission] = useForegroundPermissions()
 
@@ -86,6 +88,7 @@ export function Departure() {
       accuracy: LocationAccuracy.High,
       timeInterval: 1000,
     }, (location) => {
+    setCurrentCoord(location.coords)
      getAddressLocation(location.coords)
      .then((address) => {
       if(address){
@@ -122,6 +125,7 @@ export function Departure() {
 
       <KeyboardAwareScrollView  extraHeight={100} >
         <ScrollView>
+          {currentCoord && <Map coordinates={[currentCoord]}/>}
           <Content>
 
             {
