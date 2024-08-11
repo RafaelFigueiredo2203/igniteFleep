@@ -2,10 +2,12 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { X } from 'phosphor-react-native';
 import React, { useEffect, useState } from 'react';
 import { Alert } from 'react-native';
+import { LatLng } from 'react-native-maps';
 import { BSON } from 'realm';
 import { Button } from '../../components/Button';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { Header } from '../../components/Header';
+import { Map } from '../../components/Map';
 import { getStorageLocation } from '../../libs/asyncStorage/locationStorage';
 import { getLastAsyncTimestamp } from '../../libs/asyncStorage/syncStorage';
 import { useObject, useRealm } from '../../libs/realm';
@@ -19,6 +21,7 @@ type RouteParamsProps = {
 
 export function Arrival() {
   const [dataNotSynced, setDataNotSynced] = useState(false);
+  const [coordinates, setCoordinates] = useState<LatLng[]>([])
 
   const route = useRoute();
   const {id} = route.params as RouteParamsProps
@@ -76,8 +79,8 @@ export function Arrival() {
 
     setDataNotSynced(updatedAt > lastSync)
 
-    const locationsStorage = await 
-    getStorageLocation()
+    const locationsStorage = await getStorageLocation()
+    setCoordinates(locationsStorage)
   }
 
   
@@ -88,6 +91,11 @@ export function Arrival() {
   return (
     <Container>
       <Header title={title}/>
+
+      {
+        coordinates.length > 0 && 
+        <Map coordinates={coordinates}/>
+      }
       <Content>
       <Label>
       Placa do veículo
