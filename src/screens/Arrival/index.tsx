@@ -42,10 +42,11 @@ export function Arrival() {
     )
   }
 
-  function removedVehicleUsage(){
+  async function removedVehicleUsage(){
     realm.write(() => {
       realm.delete(historic);
     });
+    await stopLocationTask();
     goBack()
   }
 
@@ -55,12 +56,14 @@ export function Arrival() {
       return Alert.alert('Erro', 'Não foi possível obter os dados para registrar a chegada do veículo')
     }
 
-    await stopLocationTask();
+
     
     realm .write(() => {
       historic.status = 'arrival',
       historic.updated_at = new Date();
    });
+
+   await stopLocationTask();
 
    Alert.alert('Chegada', 'Chegada registrada com sucesso')
 
@@ -73,6 +76,9 @@ export function Arrival() {
   }
 
   async function getLocationInfo(){
+    if(!historic){
+      return;
+    }
 
     const lastSync = await getLastAsyncTimestamp()
     const updatedAt = historic!.updated_at.getTime()
