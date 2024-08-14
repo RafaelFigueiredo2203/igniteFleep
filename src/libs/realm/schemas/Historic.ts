@@ -1,7 +1,6 @@
 import { Realm } from '@realm/react';
 import { CoordsSchemaProps } from './Coords';
 
-
 type GenerateProps = {
   user_id: string;
   description: string;
