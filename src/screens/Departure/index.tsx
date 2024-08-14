@@ -19,7 +19,8 @@ import { Historic } from '../../libs/realm/schemas/Historic';
 import { startLocationTask } from '../../tasks/backgroundTaskLocation';
 import { getAddressLocation } from '../../utils/getAddressLocation';
 import { licensePlateValidate } from '../../utils/licensePlateValidate';
-import { Container, Content, Message } from './styles';
+import { openSettings } from '../../utils/oppenSettings';
+import { Container, Content, Message, MessageContent } from './styles';
 
 
 
@@ -64,7 +65,11 @@ export function Departure() {
 
       if(!backgroundPermissions.granted){
         setIsRegistering(false)
-        return Alert.alert('Permissão de localização', 'É necessário permitir o uso da localização para registrar a saída do veículo.')
+        return Alert.alert(
+          'Localização', 
+          'É necessário permitir que o App tenha acesso localização em segundo plano. Acesse as configurações do dispositivo e habilite "Permitir o tempo todo."',
+          [{ text: 'Abrir configurações', onPress: openSettings }]
+        )
       }
 
       await startLocationTask();
@@ -128,7 +133,15 @@ export function Departure() {
     return(
       <Container>
         <Header title="Saída"/>
-        <Message>A permissão para acessar a localização é necessária para registrar a saída.</Message>
+        <MessageContent>
+          <Message>
+            Você precisa permitir que o aplicativo tenha acesso a 
+            localização para acessar essa funcionalidade. Por favor, acesse as
+            configurações do seu dispositivo para conceder a permissão ao aplicativo.
+          </Message>
+
+          <Button title='Abrir configurações' onPress={openSettings} />
+        </MessageContent>
       </Container>
     )
   }
